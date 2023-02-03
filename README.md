@@ -12,7 +12,7 @@ mka halium-boot
 
 Sometimes you might want to make changes to the initramfs locally, such as to fix a device-specific quirk. To do this, follow these instructions:
 
-1. Download the current initramfs from [initramfs-tools-halium releases](https://github.com/Halium/initramfs-tools-halium/releases/tag/continuous)
+1. Download the current initramfs from [initramfs-tools-halium releases](https://github.com/droidian-hammerhead/halium-boot/releases/tag/droidian)
 1. Create a working directory for the files: `mkdir halium-initramfs`
 1. Extract the image: `zcat initrd.img-touch-armhf | cpio -D halium-initramfs -idmv`
 1. Make your edits to the files in `halium-initramfs/`. The file that you will probably want to edit is `scripts/halium`
@@ -21,9 +21,9 @@ Sometimes you might want to make changes to the initramfs locally, such as to fi
 1. Add `BOARD_USE_LOCAL_INITRD := true` to the end of your `BoardConfig.mk`.
 1. Set up your environment and build with `mka halium-boot`
 
-Don't forget to remove the `initramfs.gz` file and remove `BOARD_USE_LOCAL_INITRD := true` after you have proposed your changes to [initramfs-tools-halium](https://github.com/halium/initramfs-tools-halium). This ensures that your port is in line with other Halium ports.
+Don't forget to remove the `initramfs.gz` file and remove `BOARD_USE_LOCAL_INITRD := true` after you have proposed your changes to [initramfs-tools-halium](https://github.com/droidian/initramfs-tools-halium). This ensures that your port is in line with other Halium ports.
 
-If you'd prefer to rebuild a whole initramfs from source, see the build instructions in [initramfs-tools-halium](https://github.com/halium/initramfs-tools-halium#build-an-initramfs-image). Once you've built the image, rename it to `initramfs.gz` and follow the instructions from step 6 above.
+If you'd prefer to rebuild a whole initramfs from source, see the build instructions in [initramfs-tools-halium](https://github.com/droidian/initramfs-tools-halium#build-an-initramfs-image). Once you've built the image, rename it to `initramfs.gz` and follow the instructions from step 6 above.
 
 ## Initrd debugging:
 

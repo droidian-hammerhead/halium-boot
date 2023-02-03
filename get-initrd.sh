@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) Dalton Durst, 2018
+# Copyright (c) Bardia Moshiri, 2023
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-LINK_BASE="https://github.com/halium/initramfs-tools-halium/releases/download/continuous/initrd.img-touch-"
+LINK_BASE="https://github.com/droidian-hammerhead/halium-boot/releases/download/droidian/initrd.img-droidian-"
 
 ANROID_ARCH=$1
 TARGET=$2
@@ -24,7 +24,7 @@ TARGET=$2
 case $ANROID_ARCH in
     "arm") ARCH="armhf";;
     "arm64") ARCH="arm64";;
-    "x86") ARCH="i386";;
+    "x86_x64") ARCH="amd64";;
 esac
 
 LINK_FULL="$LINK_BASE$ARCH"
